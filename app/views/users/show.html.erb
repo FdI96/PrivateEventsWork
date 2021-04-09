@@ -1,0 +1,19 @@
+<h1>Show page</h1>
+
+<%= @user.name %>
+<table>
+<tr>
+<thead>
+    <td> <strong>Event Name</strong></td>
+    <td><strong>Event Description</strong></td>
+</thead>
+</tr>
+<tbody >
+ <% @user.events_created.each do |event| %>
+    <tr>
+        <td> <%= event.title %>   </td>
+        <td> <%= event.description %> </td>
+    </tr>
+    </tbody>
+ <% end %>
+</table>
