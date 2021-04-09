@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :events_created, foreign_key: :creator_id, class_name: 'Event'
+  has_many :attendances
+  has_many :events, through: attendances
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
