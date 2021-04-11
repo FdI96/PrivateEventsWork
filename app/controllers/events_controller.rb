@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[ show edit update destroy ]
+  before_action :set_event, only: %i[ show edit update destroy attend ]
 
   # GET /events or /events.json
   def index
@@ -18,6 +18,18 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
   end
+
+  def attend
+    @event = Event.find(params[:id])
+    if @event.attendees.include?(current_user)
+      redirect_to @event, notice: "You have already booed your spot"
+    else
+      @event.attendees << current_user
+      redirect_to @event
+    end
+  end
+
+
 
   # POST /events or /events.json
   def create
