@@ -8,3 +8,10 @@
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+
+<h3>Event Attenders</h3>
+<ul>
+<% @event.attendees.each do |attender| %>
+  <li> <%= attender.name %> </li>
+<% end %>
+</ul>
