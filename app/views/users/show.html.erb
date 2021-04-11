@@ -1,6 +1,7 @@
 <h1>Show page</h1>
 
 <%= @user.name %>
+<h3>Your Events created </h3>
 <table>
 <tr>
 <thead>
@@ -9,6 +10,23 @@
 </tr>
 <tbody >
  <% @user.events_created.each do |event| %>
+    <tr>
+        <td> <%= event.description %> </td>
+    </tr>
+    </tbody>
+ <% end %>
+</table>
+
+
+<h3>YEvents you are attending yaaay! </h3>
+<table>
+<tr>
+<thead>
+    <td><strong>Event Description</strong></td>
+</thead>
+</tr>
+<tbody >
+ <% @user.attended_events.each do |event| %>
     <tr>
         <td> <%= event.description %> </td>
     </tr>
