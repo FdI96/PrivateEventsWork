@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h1>EVENTS</h1>
+<br />
+<h2>UPCOMING EVENTS</h2>
 
 <table>
   <thead>
@@ -9,15 +11,12 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @events.each do |event| %>
+    <% @events.upcoming.each do |event| %>
       <tr>
         <td><%= event.description %></td>
         <td><%= event.creator.name %></td>
         <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= button_to 'Attend', attend_event_path(event), method: :post, confirm: 'really?' %></td>
       </tr>
     <% end %>
@@ -26,4 +25,23 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<h2>PAST EVENTS</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.past.each do |event| %>
+      <tr>
+        <td><%= event.description %></td>
+        <td><%= event.creator.name %></td>
+        <td><%= link_to 'Show', event %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
