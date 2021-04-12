@@ -1,0 +1,13 @@
+example_id                             | status  | run_time |
+-------------------------------------- | ------- | -------- |
+./spec/model/attendance_spec.rb[1:1:1] | unknown |          |
+./spec/model/attendance_spec.rb[1:1:2] | unknown |          |
+./spec/model/event_spec.rb[1:1:1]      | unknown |          |
+./spec/model/event_spec.rb[1:1:2]      | unknown |          |
+./spec/model/event_spec.rb[1:1:3]      | unknown |          |
+./spec/model/user_spec.rb[1:1:1]       | unknown |          |
+./spec/model/user_spec.rb[1:1:2]       | unknown |          |
+./spec/model/user_spec.rb[1:1:3]       | unknown |          |
+./spec/model/user_spec.rb[1:2:1]       | unknown |          |
+./spec/model/user_spec.rb[1:2:2]       | unknown |          |
+./spec/model/user_spec.rb[1:2:3]       | unknown |          |
