@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, :path_prefix => 'd'
+  devise_for :users
 
-  get 'user/:id' => 'users#show'
+  resource :users, only: :show
 
   root "events#index"
   
