@@ -11,13 +11,12 @@
   </head>
 
   <body>
-  <h2><%= link_to current_user.name, users_path %></h2>
-  <h3><%= link_to 'New Event', new_event_path %></h3>
-<%= link_to "Sign Up", new_user_registration_path %> |
-<%= link_to "Sign In", new_user_session_path %> |
-<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-
-
+    <%= link_to 'Home Page', root_path  %>
+    <%= show_profile_link %>
+    <%= show_sign_out %>
+    <%= show_new_event %>
+    <%= show_sign_in %>
+    <%= show_sign_up %>
     <%= yield %>
   </body>
 </html>
