@@ -23,7 +23,8 @@ class EventsController < ApplicationController
   def attend
     @event = Event.find(params[:id])
     if @event.attendees.include?(current_user)
-      redirect_to @event, notice: "You have already booed your spot"
+      redirect_to @event
+      flash[:notice] = "`You are now attending: #{@event.title}`"
     else
       @event.attendees << current_user
       redirect_to @event
@@ -77,6 +78,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:description, :creator_id)
+      params.require(:event).permit(:description, :date, :creator_id)
     end
 end

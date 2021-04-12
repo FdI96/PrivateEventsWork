@@ -17,9 +17,14 @@
   </div>
 
   <div class="field">
-    <%= form.hidden_field :creator_id, :value => current_user.id %>
+    <%= form.label :Date %>
+    <%= form.date_field :date %>
   </div>
 
+  <div class="field">
+    <%= form.hidden_field :creator_id, :value => current_user.id %>
+  </div>
+<br/>
   <div class="actions">
     <%= form.submit %>
   </div>
