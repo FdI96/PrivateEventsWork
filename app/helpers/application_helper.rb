@@ -28,4 +28,8 @@ module ApplicationHelper
     out << link_to(link_to('Sign Up', new_user_registration_path)) unless user_signed_in?
     out.html_safe
   end
+
+  def show_attend_button(event)
+    button_to 'Attend', attend_event_path(event), method: :post, confirm: 'really?' if user_signed_in? && !event.attendees.ids.include?(current_user.id)
+  end
 end

@@ -17,7 +17,7 @@
         <td><%= event.description %></td>
         <td><%= event.creator.name %></td>
         <td><%= link_to 'Show', event %></td>
-        <td><%= button_to 'Attend', attend_event_path(event), method: :post, confirm: 'really?' %></td>
+        <td><%= show_attend_button(event) %></td>
       </tr>
     <% end %>
   </tbody>
