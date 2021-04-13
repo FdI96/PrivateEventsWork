@@ -29,9 +29,11 @@ module ApplicationHelper
     out.html_safe
   end
 
+  def display_button(event)
+    button_to 'Attend', attend_event_path(event), method: :post, confirm: 'really?'
+  end
+
   def show_attend_button(event)
-    if user_signed_in? && !event.attendees.ids.include?(current_user.id)
-      button_to 'Attend', attend_event_path(event), method: :post, confirm: 'really?'
-    end
+    return display_button(event) if user_signed_in? && !event.attendees.ids.include?(current_user.id)
   end
 end
