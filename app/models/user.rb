@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  validates :name, presence: true
+  
   # User is the creator of an event
   has_many :events_created, foreign_key: :creator_id, class_name: 'Event'
 

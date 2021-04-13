@@ -43,4 +43,7 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  config.include(Shoulda::Matchers::ActiveModel, type: :model)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 end
