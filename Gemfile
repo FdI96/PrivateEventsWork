@@ -48,8 +48,8 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'database_cleaner'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
 # Rubocop gem
 gem 'rubocop', '~>0.81.0'
 

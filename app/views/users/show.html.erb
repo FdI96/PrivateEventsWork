@@ -7,7 +7,7 @@
 </thead>
 </tr>
 <tbody >
- <% @user.events_created.each do |event| %>
+ <% @event_created.each do |event| %>
     <tr>
         <td> <%= event.description %> </td>
     </tr>
@@ -20,7 +20,7 @@
         <div > 
           <% if current_user.attended_events.where("date >= ?", Date.current).exists? %>
             <ul>
-              <% current_user.attended_events.where("date >= ?", Date.current).each do |event| %>
+              <% @upcoming.each do |event| %>
                 <%= link_to(event_path(event)) do %>
                   <div>
                     <%= event.description %>
@@ -39,7 +39,7 @@
         <div> 
           <% if current_user.attended_events.where("date < ?", Date.current).exists? %>
             <ul>
-              <% current_user.attended_events.where("date < ?", Date.current).each do |event| %>
+              <% @past.each do |event| %>
                 <%= link_to(event_path(event)) do %>
                   <div >
                     <%= event.description %>
