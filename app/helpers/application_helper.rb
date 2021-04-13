@@ -30,6 +30,8 @@ module ApplicationHelper
   end
 
   def show_attend_button(event)
-    button_to 'Attend', attend_event_path(event), method: :post, confirm: 'really?' if user_signed_in? && !event.attendees.ids.include?(current_user.id)
+    if user_signed_in? && !event.attendees.ids.include?(current_user.id)
+      button_to 'Attend', attend_event_path(event), method: :post, confirm: 'really?'
+    end
   end
 end
