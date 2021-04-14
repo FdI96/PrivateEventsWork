@@ -1,0 +1,53 @@
+<h1>Profile Page</h1>
+<h2>Your Events created </h2>
+<table>
+<tr>
+<thead>
+    <td><strong>Event Description</strong></td>
+</thead>
+</tr>
+<tbody >
+ <% @event_created.each do |event| %>
+    <tr>
+        <td> <%= event.description %> </td>
+    </tr>
+    </tbody>
+ <% end %>
+</table>
+
+    <h2>Upcoming Events</h2> 
+        </div>
+        <div > 
+          <% if current_user.attended_events.where("date >= ?", Date.current).exists? %>
+            <ul>
+              <% @upcoming.each do |event| %>
+                <%= link_to(event_path(event)) do %>
+                  <div>
+                    <%= event.description %>
+                  </div>
+                <% end %>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>You do not have any upcoming events!</p>
+          <% end %>
+  
+
+
+    <h2>Previously Attended Events</h2> 
+        </div>
+        <div> 
+          <% if current_user.attended_events.where("date < ?", Date.current).exists? %>
+            <ul>
+              <% @past.each do |event| %>
+                <%= link_to(event_path(event)) do %>
+                  <div >
+                    <%= event.description %>
+                  </div>
+                <% end %>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>You have not attended any events!</p>
+          <% end %>
+

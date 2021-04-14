@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Even Name</h2>
+<p>
+  <h3><%= @event.description %></h3>
+</p>
+
+
+<%= show_edit(@event)%> |
+<%= link_to 'Back', events_path %>
+
+<h3>Event Attenders</h3>
+<ul>
+<% @event.attendees.each do |attender| %>
+  <li> <%= attender.name %> </li>
+<% end %>
+</ul>

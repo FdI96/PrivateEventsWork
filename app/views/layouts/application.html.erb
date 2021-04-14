@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to 'Home Page', root_path  %>
+    <%= show_profile_link %>
+    <%= show_sign_out %>
+    <%= show_new_event %>
+    <%= show_sign_in %>
+    <%= show_sign_up %>
+    <%= yield %>
+  </body>
+</html>
